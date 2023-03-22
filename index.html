@@ -4,78 +4,31 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Web Technologie - Joey Coviello</title>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Tangerine"
-    />
+    <title>Home Page</title>
+    <link rel="shortcut icon" href="Images/Cavaliers.webp" />
     <style>
-      h3 {
-        font-family: cursive;
-        color: green;
-        text-align: center;
-      }
-      h2 {
-        font-family: "tangerine";
-        color: red;
-        text-align: left;
-      }
-      p {
-        font-family: sans-serif;
-        color: purple;
-        font-size: 1.2em;
-        text-indent: 30px;
-      }
-      img {
-        float: left;
-        margin-top: 20px;
-        margin-left: 20px;
-        margin-bottom: 20px;
-        margin-right: 20px;
-      }
-      body {
-        background-color: gray;
-        margin-left: 120px;
-        margin-right: 120px;
-      }
-      a:link {
-        text-decoration: none;
-      }
-
-      a:visited {
-        text-decoration: none;
-      }
-
-      a:hover {
-        text-decoration: none;
-      }
-
-      a:active {
-        text-decoration: none;
-      }
-      a {
-        color: purple;
-        text-align: center;
-      }
       ul {
+        display: flex;
+        justify-content: space-between;
         list-style-type: none;
-        margin: 0;
+        margin-left: 100px;
+        margin-right: 100px;
         padding: 0;
         overflow: hidden;
-        /* Overflow controls what happens to content that is too big to fit into an area. I learned this from W3Schools. */
-        background-color: #333;
+        background-color: darkred;
         text-align: center;
+        font-family: Helvetica, sans-serif;
       }
 
       li {
         float: left;
         text-align: center;
-        color: white;
+        color: gold;
       }
 
       li a {
         display: block;
-        color: white;
+        color: gold;
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
@@ -83,130 +36,77 @@
       li a:hover {
         background-color: #111;
       }
-      /* All of these four CSS entries above allowed for me 
-      to create a vertical navigation bar for the quick links 
-      portion of this page. One problem I have though is that 
-      it added borders to all links on the page which I do not
-       neccessarily want, but it still looks good. I learned this 
-       from W3Schools.*/
-      li a:hover,
-      .dropdown:hover .dropbtn {
-        background-color: red;
-      }
 
-      li.dropdown {
-        display: inline-block;
+      li a:hover {
+        background-color: darkblue;
       }
-
-      .dropdown-content {
-        display: none;
+      body {
+        background-color: gold;
+      }
+      img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      iframe {
+        display: block;
         position: absolute;
-        background-color: #f9f9f9;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        /* This allows for you to add a shadow to an HTML element through CSS. I learned this from W3Schools. */
-        z-index: 1;
+        top: 240px;
       }
-
-      .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        text-align: left;
+      #logo1 {
+        position: absolute;
+        top: 110px;
+        left: 50px;
       }
-
-      .dropdown-content a:hover {
-        background-color: #f1f1f1;
-      }
-
-      .dropdown:hover .dropdown-content {
-        display: block;
-      }
-      li a,
-      .dropbtn {
-        display: inline-block;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
+      #logo2 {
+        position: absolute;
+        top: 110px;
+        right: 50px;
       }
     </style>
   </head>
   <body>
     <ul>
-      <li>Joey Coviello</li>
       <li><a href="#">Home</a></li>
-      <li><a href="#myhobbies">My Hobbies</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li class="dropdown">
-        <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
-        <div class="dropdown-content">
-          <a href="hw2-1.html">hw2-1</a>
-          <a href="hw2-2.html">hw2-2</a>
-          <a href="hw2-3.html">hw2-3</a>
-          <a href="hw2-4.html">hw2-4</a>
-        </div>
-      </li>
-      <li><a href="#aboutme">About Me</a></li>
-      <li><a href="sitemap.html">Portforlio</a></li>
+      <li><a href="stats.html">Stats</a></li>
+      <li><a href="roster.html">Roster</a></li>
+      <li><a href="#">News</a></li>
+      <li><a href="games.html">Games</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+      <li><a href="sitemap.html">SiteMap</a></li>
     </ul>
-
     <hr />
-
-    <h2 id="aboutme">About Me</h2>
-
-    <p title="I'm Joey Coviello">
-      <!-- The title attribute creates a tooltip that appears after you hover  -->
-      <!-- over the selected item for a few seconds. I learned this from W3Schools. -->
-      Hi! My name is Joey Coviello. I am currently a Junior at Babson College
-      studying business. <img src="Images/Joey Coviello.png" alt="" />I am from
-      Cleveland, Ohio. I love sports, video games, and movies. I also have two
-      sisters and a dog.
-    </p>
-
-    <p title="I'm Joey Coviello">
-      I chose <a href="https://www.babson.edu/">Babson College</a> because my
-      dad owns his own business selling cleaning products for motorcycles. I
-      have always helped him with his business through actually making the
-      products, and through marketing on social media as well as attending trade
-      shows to market to current and new, potential customers. Seeing that
-      Babson was #1 in entrepeneruship I really wanted to attend Babson due to
-      the fact that my dad is an entrepeneur, and I have been helping him with
-      his business and have enjoyed it throughout the years. Obvioulsy, when I
-      graduate I would like to be an entrepeneur and start my own business.
-    </p>
-
-    <h2 id="myhobbies">My Hobbies</h2>
-
-    <p title="My Hobbies">
-      <img
-        src="https://assets.2k.com/1a6ngf98576c/435wasAEo74dJUQELhKQUD/29fdd9361099bb3712245b5b226152a7/NBA23-WEBSITE-PRE_ORDER-HOMPAGE-MODULE2-RETAIL_CAROUSEL-MJ_EDITION-425x535.jpg"
-        alt=""
-        height="125"
-        width="125"
-      />
-      My favorite hobby is probably playing <strong>video games</strong> and
-      <strong>waching movies</strong> as well as watching sports. In terms of
-      video games, I started playing mainly
-      <a
-        href="https://www.nba2k.com/?redirect=https%3A%2F%2Fwww.nba2k.com%2Fupload"
-        >NBA 2K</a
-      >
-      when I was younger but now I mainly play any type of story mode games and
-      occasionally some multiplayer stuff like COD and Fortnite. In terms of
-      movies, I watch a lot of them. My favorite genres are probably horror,
-      thriller, and action/adventure. When it comes to sports, I like wacthing
-      all kinds of sports but mainly basketball and football. I used to play
-      basketball for my high school and my middle school, and I enjoyed playing
-      it a lot. I also played football for one year but did not like it too
-      much.
-    </p>
-    <hr />
-    <h3 id="contact">Contact Information</h3>
-    <p>Joey Coviello OIM3690</p>
-    <a href="https://github.com/covjos/WebTech">GitHub Profile</a>
-    <a href="mailto:jcoviello1@babson.edu">Email Me</a>
-    <a href="sitemap.html">Portfolio</a>
+    <img
+      src="Images/homepagebanner.jfif"
+      alt="Lebron Cleveland Banner"
+      title="Lebron Cleveland Banner"
+      width="70%"
+      height="150px"
+    />
+    <img id="logo1"
+      src="Images/Cavaliers.webp"
+      alt="Cleveland Cavaliers"
+      title="Cleveland Cavaliers Logo"
+      width="100px"
+      height="100px"
+    />
+    <img id="logo2"
+      src="Images/Cavaliers.webp"
+      alt="Cleveland Cavaliers"
+      title="Cleveland Cavaliers Logo"
+      width="100px"
+      height="100px"
+    />
+    <iframe
+      width="100%"
+      height="500"
+      alt="Cleveland Cavaliers 2022-2023 Hype Video"
+      src="https://www.youtube.com/embed/5oWYLHddjOY"
+      title="2022-2023 Cleveland Cavaliers Hype Video"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    ></iframe>
+    <!--I tried to get this video to autoplay and loop by adding these emelemtns to the iframe code but that did not work and I asked ChatGPT how to do this and it said I needed to use JavaScript, which I tried, but I stil was unable to do this because ChatGPT said that modern browsers do not allow autoplay or loops due to privacy concerns. I will continue to try and get this to work. If you know how to do this, that would be great too.-->
   </body>
 </html>
-<!-- "I, Joseph Coviello, pledge my honor that I have neither received nor provided unauthorized assistance during the completion of this work." -->

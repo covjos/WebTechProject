@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact/Feedback Page</title>
+    <link rel="shortcut icon" href="Images/Cavaliers.webp">
+    <style>
+      form {
+        background-color: gold;
+        margin: auto;
+        width: 20%;
+        padding: 10px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: Helvetica, sans-serif;
+        font-size: 15px;
+      }
+      label {
+        color: darkred;
+      }
+      div {
+        color: darkred;
+      }
+      body {
+        background-image: url("images/contactpagebackground.jpg");
+        background-position: top;
+        height: 100%;
+        width: 100%;
+      }
+      ul {
+        display: flex;
+        justify-content: space-between;
+        list-style-type: none;
+        margin-left: 100px;
+        margin-right: 100px;
+        padding: 0;
+        overflow: hidden;
+        background-color: darkred;
+        text-align: center;
+        font-family: Helvetica, sans-serif;
+      }
+
+      li {
+        float: left;
+        text-align: center;
+        color: gold;
+      }
+
+      li a {
+        display: block;
+        color: gold;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      li a:hover {
+        background-color: #111;
+      }
+
+      li a:hover {
+        background-color: darkblue;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="stats.html">Stats</a></li>
+      <li><a href="roster.html">Roster</a></li>
+      <li><a href="#">News</a></li>
+      <li><a href="games.html">Games</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+      <li><a href="sitemap.html">SiteMap</a></li>
+    </ul>
+    <hr />
+    <form method="post" action="https://oim-apis.up.railway.app/form2">
+      <form>
+        <div>
+          <label for="fname-input">First Name:</label>
+          <input
+            type="text"
+            id="fname-input"
+            name="firstname"
+            maxlength="100"
+            placeholder="First Name"
+          />
+        </div>
+        <div>
+          <label for="lname-input">Last Name:</label>
+          <input
+            type="text"
+            id="lname-input"
+            name="lastname"
+            maxlength="100"
+            placeholder="Last Name"
+          />
+        </div>
+        <div>
+          <label for="email-input">Email:</label>
+          <input
+            type="text"
+            id="email-input"
+            name="email"
+            maxlength="100"
+            placeholder="Email Address"
+          />
+        </div>
+        <div>
+          Gender:
+          <label
+            >Male
+            <input type="radio" name="gender" value="male" id="male" />
+          </label>
+          <label
+            >Female
+            <input type="radio" name="gender" value="female" id="female" />
+          </label>
+        </div>
+        <div>Are you satisfied with our website:</div>
+        <div>
+          <input type="checkbox" id="yes-input" name="feedback" value="Yes" />
+          <label for="yes-input">Yes</label>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            id="kind-of-input"
+            name="feedback"
+            value="Kind Of"
+          />
+          <label for="kind-of-input">Kind Of</label>
+        </div>
+        <div>
+          <input type="checkbox" id="no-input" name="feedback" value="No" />
+          <label for="no-input">No</label>
+        </div>
+        <div>
+          <div>
+            <label for="grade-select">Which city do you live in?</label>
+          </div>
+          <div>
+            <select name="grade" id="grade-select">
+              <option value="Strongsville">Strongsville</option>
+              <option value="Beachwood">Beachwood</option>
+              <option value="Cleveland Heights">Cleveland Heights</option>
+              <option value="Bay Village">bay Village</option>
+              <option value="Avon Lake">Avon Lake</option>
+              <option value="Brecksville">Brecksville</option>
+              <option value="Solon">Solon</option>
+              <option value="Parma">Parma</option>
+              <option value="Rocky River">Rocky River</option>
+              <option value="Pepper Pike">Pepper Pike</option>
+              <option value="Mentor">Mentor</option>
+              <option value="Gates Mills">Gates Mills</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <div>
+            <label for="comments-input">Leave a comment:</label>
+          </div>
+          <div>
+            <textarea
+              id="comments-input"
+              name="comments"
+              rows="5"
+              cols="25"
+              placeholder="Enter your comment here..."
+            ></textarea>
+          </div>
+        </div>
+        <button type="submit">
+          <img src="images/mailbox.png" height="25" alt="submit button" />
+        </button>
+        <button type="reset">
+          <img src="Images/reset.png" height="25" alt="reset button" />
+        </button>
+      </form>
+    </form>
+  </body>
+</html>
