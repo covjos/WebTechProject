@@ -7,6 +7,13 @@
     <title>Home Page</title>
     <link rel="shortcut icon" href="Images/Cavaliers.webp" />
     <style>
+      h1 {
+        position: absolute;
+        right: 190px;
+        top: 75px;
+        font-size: 65px;
+        color: darkred;
+      }
       ul {
         display: flex;
         justify-content: space-between;
@@ -43,11 +50,6 @@
       body {
         background-color: gold;
       }
-      img {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-      }
       iframe {
         display: block;
         position: absolute;
@@ -63,34 +65,63 @@
         top: 110px;
         right: 50px;
       }
+      @keyframes slideDown {
+        0% {
+          transform: translateY(0%) translateX(-50%) rotate(0deg);
+        }
+        100% {
+          transform: translateY(225%) translateX(-50%) rotate(360deg);
+        }
+      }
+      img:hover {
+        animation-name: slideDown;
+        animation-duration: 3s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+      }
+      @media screen and (max-width: 600px) {
+        h1 {
+          position: static;
+          text-align: center;
+          margin-top: 20px;
+        }
+        ul {
+          flex-wrap: wrap;
+          margin-left: 0;
+          margin-right: 0;
+        }
+        li {
+          width: 100%;
+          text-align: center;
+        }
+        iframe {
+          top: 300px;
+        }
+      }
     </style>
   </head>
   <body>
     <ul>
-      <li><a href="#">Home</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="stats.html">Stats</a></li>
       <li><a href="roster.html">Roster</a></li>
-      <li><a href="#">News</a></li>
+      <li><a href="guessingGame.html">Guessing Game</a></li>
       <li><a href="games.html">Games</a></li>
       <li><a href="feedback.html">Feedback</a></li>
       <li><a href="sitemap.html">SiteMap</a></li>
     </ul>
     <hr />
+    <h1 id="website-title">Cleveland Cavaliers Team Page</h1>
     <img
-      src="Images/homepagebanner.jfif"
-      alt="Lebron Cleveland Banner"
-      title="Lebron Cleveland Banner"
-      width="70%"
-      height="150px"
-    />
-    <img id="logo1"
+      id="logo1"
       src="Images/Cavaliers.webp"
       alt="Cleveland Cavaliers"
       title="Cleveland Cavaliers Logo"
       width="100px"
       height="100px"
     />
-    <img id="logo2"
+    <img
+      id="logo2"
       src="Images/Cavaliers.webp"
       alt="Cleveland Cavaliers"
       title="Cleveland Cavaliers Logo"
@@ -107,6 +138,30 @@
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       allowfullscreen
     ></iframe>
+    <script>
+      const websiteTitle = document.getElementById("website-title");
+
+      websiteTitle.addEventListener("mouseover", function () {
+        websiteTitle.style.color = "darkblue";
+        websiteTitle.style.fontWeight = "bold";
+      });
+      websiteTitle.addEventListener("mouseout", function () {
+        websiteTitle.style.color = "darkred";
+        websiteTitle.style.fontWeight = "bold";
+      });
+      websiteTitle.addEventListener("mouseover", () => {
+        websiteTitle.innerHTML = websiteTitle.innerHTML.replace(
+          "Cavaliers",
+          "Cavs"
+        );
+      });
+      websiteTitle.addEventListener("mouseout", () => {
+        websiteTitle.innerHTML = websiteTitle.innerHTML.replace(
+          "Cavs",
+          "Cavaliers"
+        );
+      });
+    </script>
     <!--I tried to get this video to autoplay and loop by adding these emelemtns to the iframe code but that did not work and I asked ChatGPT how to do this and it said I needed to use JavaScript, which I tried, but I stil was unable to do this because ChatGPT said that modern browsers do not allow autoplay or loops due to privacy concerns. I will continue to try and get this to work. If you know how to do this, that would be great too.-->
   </body>
 </html>

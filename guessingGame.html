@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cavaliers Guessing Game</title>
+    <style>
+      body {
+        min-height: 100vh;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      img {
+        border: gold 2px solid;
+      }
+      label {
+        font-size: 25px;
+      }
+      #result-message {
+        position: absolute;
+        top: 70px;
+        font-size: 30px;
+      }
+      h1 {
+        color: darkred;
+      }
+      ul {
+        display: flex;
+        justify-content: space-between;
+        list-style-type: none;
+        margin-left: 100px;
+        margin-right: 100px;
+        padding: 0;
+        overflow: hidden;
+        background-color: darkred;
+        text-align: center;
+        font-family: Helvetica, sans-serif;
+      }
+
+      li {
+        text-align: center;
+        color: gold;
+      }
+
+      li a {
+        display: block;
+        color: gold;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      li a:hover {
+        background-color: #111;
+      }
+
+      li a:hover {
+        background-color: darkblue;
+      }
+      #game {
+        padding-top: 40px;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body background="Images/guessgamepagebackground.webp">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="stats.html">Stats</a></li>
+      <li><a href="roster.html">Roster</a></li>
+      <li><a href="guessingGame.html">Guessing Game</a></li>
+      <li><a href="games.html">Games</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+      <li><a href="sitemap.html">SiteMap</a></li>
+    </ul>
+    <hr />
+    <div id="game">
+      <h1>Guess the Player</h1>
+      <img
+        id="player-image"
+        src="Images/cavalierslogo.png"
+        alt="Player Image"
+      />
+      <br />
+      <button id="start-button">Start Game</button>
+      <br />
+      <label for="player-name"><strong>Who is this player?</strong></label>
+      <input type="text" id="player-name" name="player-name" />
+      <button id="submit-button">Submit</button>
+      <br />
+      <p id="result-message"></p>
+    </div>
+    <script>
+      const players = [
+        {
+          name: "Donovan Mitchell",
+          image: "Images/donovan.png",
+        },
+        {
+          name: "Darius Garland",
+          image: "Images/darius.png",
+        },
+        {
+          name: "Evan Mobley",
+          image: "Images/evan.png",
+        },
+        {
+          name: "Jarrett Allen",
+          image: "Images/jarrett.png",
+        },
+
+        {
+          name: "Caris LeVert",
+          image: "Images/caris.png",
+        },
+        {
+          name: "Cedi Osman",
+          image: "Images/cedi.png",
+        },
+        {
+          name: "Danny Green",
+          image: "Images/danny.png",
+        },
+        {
+          name: "Isaac Okoro",
+          image: "Images/isaac.png",
+        },
+        {
+          name: "Lamar Stevens",
+          image: "Images/lamar.png",
+        },
+        {
+          name: "Ricky Rubio",
+          image: "Images/ricky.png",
+        },
+        {
+          name: "Sam Merrill",
+          image: "Images/sam.png",
+        },
+        {
+          name: "Dean Wade",
+          image: "Images/dean.png",
+        },
+        {
+          name: "Raul Neto",
+          image: "Images/raul.png",
+        },
+        {
+          name: "Robin Lopez",
+          image: "Images/robin.png",
+        },
+        {
+          name: "Mamadi Diakite",
+          image: "Images/mamadi.png",
+        },
+        {
+          name: "Isaiah Mobley",
+          image: "Images/isaiah.png",
+        },
+        {
+          name: "Dylan Windler",
+          image: "Images/dylan.png",
+        },
+      ];
+
+      const startButton = document.getElementById("start-button");
+      const playerImage = document.getElementById("player-image");
+      const playerName = document.getElementById("player-name");
+      const submitButton = document.getElementById("submit-button");
+      const resultMessage = document.getElementById("result-message");
+
+      let currentPlayer = null;
+      let gameState = "not-started";
+
+      function startGame() {
+        gameState = "playing";
+        playerName.disabled = false;
+        submitButton.disabled = false;
+
+        currentPlayer = players[Math.floor(Math.random() * players.length)];
+
+        playerImage.src = currentPlayer.image;
+        playerImage.alt = "Who is this player?";
+
+        playerName.value = "";
+        resultMessage.innerHTML = "";
+      }
+
+      function submitAnswer() {
+        if (gameState !== "playing") {
+          return;
+        }
+
+        const guess = playerName.value.toLowerCase();
+        const correctAnswer = currentPlayer.name.toLowerCase();
+        if (guess === correctAnswer) {
+          resultMessage.innerHTML = "Correct!";
+        } else {
+          resultMessage.innerHTML =
+            "Incorrect. The correct answer was " + currentPlayer.name + ".";
+        }
+
+        playerName.disabled = true;
+        submitButton.disabled = true;
+        gameState = "game-over";
+      }
+      submitButton.addEventListener("click", function () {
+        if (playerName.value === "") {
+          alert("Please enter a player name.");
+        }
+      });
+
+      startButton.addEventListener("click", startGame);
+      submitButton.addEventListener("click", submitAnswer);
+    </script>
+  </body>
+</html>

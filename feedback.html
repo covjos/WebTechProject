@@ -5,8 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact/Feedback Page</title>
-    <link rel="shortcut icon" href="Images/Cavaliers.webp">
+    <link rel="shortcut icon" href="Images/Cavaliers.webp" />
     <style>
+      #male {
+        margin-right: 25px;
+      }
       form {
         background-color: gold;
         margin: auto;
@@ -70,7 +73,7 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="stats.html">Stats</a></li>
       <li><a href="roster.html">Roster</a></li>
-      <li><a href="#">News</a></li>
+      <li><a href="guessingGame.html">Guessing Game</a></li>
       <li><a href="games.html">Games</a></li>
       <li><a href="feedback.html">Feedback</a></li>
       <li><a href="sitemap.html">SiteMap</a></li>
@@ -111,11 +114,11 @@
         <div>
           Gender:
           <label
-            >Male
+            >Male:
             <input type="radio" name="gender" value="male" id="male" />
           </label>
           <label
-            >Female
+            >Female:
             <input type="radio" name="gender" value="female" id="female" />
           </label>
         </div>
@@ -173,12 +176,47 @@
           </div>
         </div>
         <button type="submit">
-          <img src="images/mailbox.png" height="25" alt="submit button" />
+          <img
+            src="images/mailbox.png"
+            height="25"
+            alt="submit button"
+            id="submit"
+          />
         </button>
         <button type="reset">
           <img src="Images/reset.png" height="25" alt="reset button" />
         </button>
       </form>
     </form>
+    <script>
+      const form = document.querySelector("form");
+      const submitButton = document.getElementById("submit");
+
+      submitButton.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        const firstName = form.elements["firstname"];
+        const lastName = form.elements["lastname"];
+        const email = form.elements["email"];
+        const gender = form.elements["gender"];
+        const feedback = form.elements["feedback"];
+        const city = form.elements["grade"];
+
+        if (
+          firstName.value === "" ||
+          lastName.value === "" ||
+          email.value === "" ||
+          (gender[0].checked === false && gender[1].checked === false) ||
+          (feedback[0].checked === false &&
+            feedback[1].checked === false &&
+            feedback[2].checked === false) ||
+          city.value === ""
+        ) {
+          alert("Please fill out all the fields before submitting the form.");
+        } else {
+          form.submit();
+        }
+      });
+    </script>
   </body>
 </html>
